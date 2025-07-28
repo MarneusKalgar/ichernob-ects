@@ -1,3 +1,4 @@
+const { ECTS_TO_SCORE_MAP } = require("./constants");
 class ECTS {
   constructor(grade) {
     this.grade = grade;
@@ -9,8 +10,11 @@ class ECTS {
       if (score >= min && score <= max) {
         return grade;
       }
+
+      if (score > 100 || score < 0) {
+        return "F";
+      }
     }
-    return "F";
   }
 }
 
