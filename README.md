@@ -13,3 +13,6 @@ const ECTS = require('ects-ihor-chernobai');
 const calculator = new ECTS(85);
 console.log(calculator.ectsFromScore()); // 'B'
 ```
+
+## Version History
+- 1.1.0 - Fixed logic for invalid scores
