@@ -1,17 +1,17 @@
 const { ECTS_TO_SCORE_MAP } = require("./constants");
 class ECTS {
-  constructor(grade) {
-    this.grade = grade;
+  constructor(score) {
+    this.score = score;
   }
 
-  ectsFromScore(score) {
+  ectsFromScore() {
     for (const [grade, range] of Object.entries(ECTS_TO_SCORE_MAP)) {
       const [min, max] = range;
-      if (score >= min && score <= max) {
+      if (this.score >= min && this.score <= max) {
         return grade;
       }
 
-      if (score > 100 || score < 0) {
+      if (this.score > 100 || this.score < 0) {
         return "F";
       }
     }
